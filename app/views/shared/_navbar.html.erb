@@ -11,12 +11,7 @@
   <% if signed_in? %>
     <div class="space-x-4 flex items-center">
       <% if Docuseal.demo? %>
-        <a href="https://docuseal.com/sign_up" class="btn btn-neutral btn-sm btn-outline inline-flex items-center justify-center" style="height: 37px">
-          <%= t('sign_up') %>
-        </a>
-        <span class="hidden sm:inline">
-          <%= render 'shared/github_button' %>
-        </span>
+        <span></span>
       <% else %>
         <div class="flex items-center justify-center space-x-4 mr-1">
           <%= render 'shared/navbar_buttons' %>
@@ -24,8 +19,8 @@
         </div>
       <% end %>
       <div class="dropdown dropdown-end">
-        <label tabindex="0" class="cursor-pointer bg-base-content text-purple-300 rounded-full p-2 w-9 justify-center flex">
-          <span class="text-sm align-text-top"><%= current_user.initials %></span>
+        <label tabindex="0" class="cursor-pointer rounded-full p-2 w-9 justify-center flex" style="background: var(--bhh-cider); color: #fff;">
+          <span class="text-sm align-text-top" style="font-family: var(--bhh-serif); font-style: italic; font-weight: 700;"><%= current_user.initials %></span>
         </label>
         <ul tabindex="0" class="z-10 dropdown-content p-2 mt-2 shadow menu text-base bg-base-100 rounded-box min-w-[160px] text-right">
           <li>

@@ -202,15 +202,15 @@
         role="application"
         :aria-label="t('signature_drawing_area')"
         style="padding: 1px; 0"
-        class="bg-white border border-base-300 rounded-2xl w-full draw-canvas"
+        class="bg-white border border-base-300 rounded w-full draw-canvas"
       />
       <div
         v-if="isShowQr"
-        class="top-0 bottom-0 right-0 left-0 absolute bg-white rounded-2xl m-0.5"
+        class="top-0 bottom-0 right-0 left-0 absolute bg-white rounded m-0.5"
       />
       <div
         v-if="isShowQr"
-        class="top-0 bottom-0 right-0 left-0 absolute bg-base-content/10 rounded-2xl"
+        class="top-0 bottom-0 right-0 left-0 absolute bg-base-content/10 rounded"
       >
         <div class="absolute top-1.5 right-1.5">
           <button
@@ -320,7 +320,7 @@
       class="text-base-content/60 text-xs text-center w-full mt-1 select-none"
     >
       {{ t('by_clicking_you_agree_to_the').replace('{button}', buttonText.charAt(0).toUpperCase() + buttonText.slice(1)) }} <a
-        href="https://www.docuseal.com/esign-disclosure"
+        href="https://www.brownhavenhomes.com/esign-disclosure"
         target="_blank"
       >
         <span class="inline md:hidden">

@@ -3,10 +3,34 @@
   <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style></style>
+    <style>
+      body { margin: 0; padding: 0; font-family: "Helvetica Neue", Arial, sans-serif; color: #092b49; background-color: #faf6ee; }
+      .hs-email-wrap { max-width: 640px; margin: 0 auto; }
+      .hs-email-header { background-color: #092b49; padding: 28px 36px; }
+      .hs-email-header-logo { display: inline-block; width: 36px; height: 36px; background-color: #fed109; border-radius: 4px; text-align: center; line-height: 36px; font-family: Georgia, serif; font-weight: bold; font-style: italic; font-size: 22px; color: #092b49; vertical-align: middle; }
+      .hs-email-header-text { display: inline-block; vertical-align: middle; margin-left: 12px; color: #ffffff; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; }
+      .hs-email-body { background-color: #ffffff; padding: 36px; }
+      .hs-email-body p { font-size: 14px; line-height: 1.75; color: #4c5966; margin: 0 0 16px 0; }
+      .hs-email-body a { color: #092b49; }
+      .hs-email-footer-dandy { background-color: #fed109; padding: 14px 36px; font-size: 11px; color: #092b49; letter-spacing: 0.14em; text-transform: uppercase; }
+      .hs-email-footer-denim { background-color: #092b49; color: rgba(255,255,255,0.55); padding: 14px 36px; font-size: 11px; }
+    </style>
   </head>
   <body dir="<%= TextUtils.rtl?(yield) ? 'rtl' : 'auto' %>">
-    <%= yield %>
-    <%= render partial: 'shared/mailer_attribution' %>
+    <div style="background-color: #faf6ee; padding: 24px 16px;">
+      <div class="hs-email-wrap" style="max-width: 640px; margin: 0 auto;">
+        <div class="hs-email-header" style="background-color: #092b49; padding: 28px 36px;">
+          <span style="display: inline-block; width: 36px; height: 36px; background-color: #fed109; border-radius: 4px; text-align: center; line-height: 36px; font-family: Georgia, serif; font-weight: bold; font-style: italic; font-size: 22px; color: #092b49; vertical-align: middle;">S</span>
+          <span style="display: inline-block; vertical-align: middle; margin-left: 12px; color: #ffffff; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; font-family: 'Helvetica Neue', Arial, sans-serif;">Haven Sign</span>
+        </div>
+        <div style="background-color: #ffffff; padding: 36px; font-family: 'Helvetica Neue', Arial, sans-serif; color: #092b49; font-size: 14px; line-height: 1.75;">
+          <%= yield %>
+        </div>
+        <div style="background-color: #fed109; padding: 14px 36px; font-size: 11px; color: #092b49; letter-spacing: 0.14em; text-transform: uppercase; font-family: 'Helvetica Neue', Arial, sans-serif;">
+          Brown Haven Homes &middot; Since 2005
+        </div>
+        <%= render partial: 'shared/mailer_attribution' %>
+      </div>
+    </div>
   </body>
 </html>

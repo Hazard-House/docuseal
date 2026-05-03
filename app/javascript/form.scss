@@ -4,6 +4,85 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Haven Sign — BHH Design Tokens */
+@font-face { font-family: "Sweet Sans Pro"; src: url("/fonts/SweetSansProRegular.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Sweet Sans Pro"; src: url("/fonts/SweetSansProMedium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Sweet Sans Pro"; src: url("/fonts/SweetSansProBold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Sweet Sans Pro"; src: url("/fonts/SweetSansProLight.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adobe Caslon"; src: url("/fonts/AdobeCaslonBold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+  --bhh-sans: "Sweet Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  --bhh-serif: "Adobe Caslon", "Adobe Caslon Pro", "Garamond", Georgia, serif;
+  --bhh-dandelion: #fed109;
+  --bhh-denim: #092b49;
+  --bhh-cider: #bb6228;
+  --hs-ink: #092b49;
+  --hs-ink-2: #4c5966;
+  --hs-ink-3: #8a96a3;
+  --hs-surface: #ffffff;
+  --hs-surface-2: #faf6ee;
+  --hs-surface-3: #f2f5f8;
+  --hs-rule: rgba(9,43,73,0.12);
+  --hs-accent: #fed109;
+  --hs-accent-soft: #fff3a8;
+  --hs-success: #2f7a4d;
+  --hs-success-soft: #e8f3ec;
+  --hs-danger: #a83b3b;
+  --hs-danger-soft: #fbeded;
+  --hs-rule-strong: rgba(9,43,73,0.22);
+  --hs-surface-doc: #ece5d6;
+}
+
+/* Haven Sign — Field markers (PDF signing overlays) */
+.hs-field {
+  position: absolute;
+  border: 1.5px dashed var(--bhh-dandelion);
+  background: rgba(254,209,9,.18);
+  color: var(--hs-ink);
+  font-family: var(--bhh-sans); font-weight: 500; font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, transform .15s;
+  border-radius: 2px;
+}
+.hs-field:hover { background: rgba(254,209,9,.4); transform: translateY(-1px); }
+.hs-field.required::before { content: "\2605"; position: absolute; top: -8px; left: -8px; width: 16px; height: 16px; background: var(--bhh-dandelion); color: var(--hs-ink); border-radius: 50%; font-size: 9px; display: flex; align-items: center; justify-content: center; font-style: normal; }
+.hs-field.signed { background: #fff; border: 1px solid var(--hs-success); color: var(--hs-success); }
+.hs-field.signed::before { content: "\2713"; background: var(--hs-success); color: #fff; }
+
+/* Haven Sign — Signature fonts */
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Caveat:wght@500;700&family=Dancing+Script:wght@500;700&family=Homemade+Apple&display=swap');
+.hs-sig-font-allura { font-family: 'Allura', cursive; }
+.hs-sig-font-caveat { font-family: 'Caveat', cursive; font-weight: 700; }
+.hs-sig-font-dancing { font-family: 'Dancing Script', cursive; font-weight: 700; }
+.hs-sig-font-homemade { font-family: 'Homemade Apple', cursive; }
+.hs-sig-font-caslon { font-family: var(--bhh-serif); font-style: italic; font-weight: 700; }
+
+/* Haven Sign — Tags */
+.hs-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--bhh-sans); font-weight: 500;
+  font-size: 9px; letter-spacing: .2em; text-transform: uppercase;
+  border-radius: 999px; border: 1px solid var(--hs-rule);
+  color: var(--hs-ink-2);
+}
+.hs-tag.success { background: var(--hs-success-soft); border-color: rgba(47,122,77,.3); color: var(--hs-success); }
+.hs-tag.dandy { background: var(--bhh-dandelion); border-color: var(--bhh-dandelion); color: var(--hs-ink); }
+.hs-tag.dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* Haven Sign — Progress strip */
+.hs-progress { display: flex; align-items: center; gap: 12px; }
+.hs-progress .bar { flex: 1; height: 4px; background: var(--hs-rule); border-radius: 2px; overflow: hidden; }
+.hs-progress .bar > div { height: 100%; background: var(--bhh-dandelion); }
+.hs-progress .pct { font-family: var(--bhh-serif); font-style: italic; font-weight: 700; color: var(--hs-ink); font-size: 14px; min-width: 36px; text-align: right; }
+
+body {
+  font-family: var(--bhh-sans);
+  color: var(--hs-ink);
+}
+
 a[href],
 input[type='checkbox'],
 input[type='submit'],
@@ -44,7 +123,7 @@ button[disabled] .enabled, button.btn-disabled .enabled {
 }
 
 .base-textarea {
-  @apply textarea textarea-bordered bg-white rounded-3xl;
+  @apply textarea textarea-bordered bg-white rounded;
 }
 
 .btn {

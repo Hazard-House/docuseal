@@ -1,14 +1,15 @@
 <div class="max-w-md mx-auto px-2 mt-12 mb-4">
   <div class="space-y-6 mx-auto">
     <div class="space-y-6">
-      <div class="flex items-center p-2 mb-4 justify-center">
-        <div class="flex items-center">
-          <div class="mr-3">
-            <%= svg_icon('circle_check', class: 'w-10 h-10 text-green-600') %>
-          </div>
-          <div class="text-2xl">
-            <%= t('completed_successfully') %>
-          </div>
+      <div class="flex flex-col items-center p-6 mb-4 justify-center text-center" style="background: var(--hs-surface-2); border-left: 3px solid var(--bhh-dandelion);">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bhh-dandelion); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+          <%= svg_icon('circle_check', class: 'w-7 h-7', style: 'color: var(--hs-ink);') %>
+        </div>
+        <div style="font-family: var(--bhh-serif); font-style: italic; font-weight: 700; font-size: 28px; color: var(--hs-ink); line-height: 1.1;">
+          Signed in full.
+        </div>
+        <div style="font-size: 13px; color: var(--hs-ink-2); margin-top: 8px;">
+          <%= t('completed_successfully') %>
         </div>
       </div>
     </div>
