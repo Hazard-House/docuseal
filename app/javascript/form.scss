@@ -4,13 +4,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Haven Sign — BHH Design Tokens */
-@font-face { font-family: "Sweet Sans Pro"; src: url(/* webpackIgnore: true */ "/fonts/SweetSansProRegular.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Sweet Sans Pro"; src: url(/* webpackIgnore: true */ "/fonts/SweetSansProMedium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: "Sweet Sans Pro"; src: url(/* webpackIgnore: true */ "/fonts/SweetSansProBold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Sweet Sans Pro"; src: url(/* webpackIgnore: true */ "/fonts/SweetSansProLight.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: swap; }
-@font-face { font-family: "Adobe Caslon"; src: url(/* webpackIgnore: true */ "/fonts/AdobeCaslonBold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
-
+/* Haven Sign — BHH Design Tokens (fonts loaded via _head_tags.html.erb) */
 :root {
   --bhh-sans: "Sweet Sans Pro", "Helvetica Neue", Arial, sans-serif;
   --bhh-serif: "Adobe Caslon", "Adobe Caslon Pro", "Garamond", Georgia, serif;

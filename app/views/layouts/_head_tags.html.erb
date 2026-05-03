@@ -2,3 +2,10 @@
   <%= content_for(:html_title) || (signed_in? ? 'Haven Sign' : 'Haven Sign — Brown Haven Homes') %>
 </title>
 <%= render 'shared/meta' %>
+<style>
+  @font-face { font-family: "Sweet Sans Pro"; src: url("/fonts/SweetSansProRegular.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Sweet Sans Pro"; src: url("/fonts/SweetSansProMedium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Sweet Sans Pro"; src: url("/fonts/SweetSansProBold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Sweet Sans Pro"; src: url("/fonts/SweetSansProLight.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Adobe Caslon"; src: url("/fonts/AdobeCaslonBold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+</style>
