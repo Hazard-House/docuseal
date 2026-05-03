@@ -79,9 +79,6 @@ Rails.application.configure do
 
   if ENV['MAILLAYER_API_KEY']
     config.action_mailer.delivery_method = :maillayer
-    config.action_mailer.maillayer_settings = {
-      api_key: ENV.fetch('MAILLAYER_API_KEY')
-    }
   elsif ENV['SMTP_ADDRESS']
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
