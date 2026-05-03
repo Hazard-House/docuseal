@@ -51,8 +51,7 @@
 .hs-field.signed { background: #fff; border: 1px solid var(--hs-success); color: var(--hs-success); }
 .hs-field.signed::before { content: "\2713"; background: var(--hs-success); color: #fff; }
 
-/* Haven Sign — Signature fonts */
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Caveat:wght@500;700&family=Dancing+Script:wght@500;700&family=Homemade+Apple&display=swap');
+/* Haven Sign — Signature fonts (loaded via <link> in form layout) */
 .hs-sig-font-allura { font-family: 'Allura', cursive; }
 .hs-sig-font-caveat { font-family: 'Caveat', cursive; font-weight: 700; }
 .hs-sig-font-dancing { font-family: 'Dancing Script', cursive; font-weight: 700; }
