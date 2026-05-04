@@ -99,9 +99,8 @@
     <div
       v-if="attribution"
       class="text-center mt-4"
-      style="font-size: 13px; color: var(--hs-ink-2);"
     >
-      Brown Haven Homes
+      <img src="/logo-wide.png" alt="Brown Haven Homes" style="height: 20px; width: auto; opacity: 0.45; display: inline-block;" />
     </div>
   </div>
 </template>
