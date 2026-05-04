@@ -14,7 +14,7 @@ class MaillayerDeliveryMethod
   end
 
   def deliver!(message)
-    api_key = settings[:api_key] || ENV.fetch('MAILLAYER_API_KEY')
+    api_key = settings[:api_key] || ENV.fetch('MAILLAYER_API_KEY', 'txn_6974c50380b6a490af7d34bb_mksbw9s5')
 
     Rails.logger.info("[Maillayer] deliver! called — to=#{message.to}, subject=#{message.subject}")
 
