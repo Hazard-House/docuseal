@@ -18,6 +18,8 @@ class MaillayerDeliveryMethod
 
     from = message[:from].to_s.presence || 'Haven Sign <noreply@brownhavenhomes.com>'
 
+    Rails.logger.info("[Maillayer] Delivering to=#{message.to.inspect} from=#{from} subject=#{message.subject.inspect}")
+
     Array(message.to).each do |recipient|
       payload = {
         apiKey: api_key,
