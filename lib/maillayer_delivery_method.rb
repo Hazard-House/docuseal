@@ -16,23 +16,16 @@ class MaillayerDeliveryMethod
   def deliver!(message)
     api_key = settings[:api_key] || ENV.fetch('MAILLAYER_API_KEY')
 
-    from = message[:from].to_s.presence || 'Haven Sign <noreply@brownhavenhomes.com>'
-
-    $stdout.puts "[Maillayer] deliver! called to=#{message.to.inspect} from=#{from} subject=#{message.subject.inspect}"
-    $stdout.flush
-
     Array(message.to).each do |recipient|
       payload = {
         apiKey: api_key,
-        from: from,
+        from: 'noreply@brownhavenhomes.com',
         to: recipient,
-        subject: message.subject,
-        content: html_body(message),
-        variables: {}
+        variables: {
+          subject: message.subject,
+          html: html_body(message)
+        }
       }
-
-      $stdout.puts "[Maillayer] POSTing to #{ENDPOINT} for #{recipient}"
-      $stdout.flush
 
       response = Net::HTTP.post(
         ENDPOINT,
@@ -40,17 +33,10 @@ class MaillayerDeliveryMethod
         'Content-Type' => 'application/json'
       )
 
-      $stdout.puts "[Maillayer] Response: #{response.code} #{response.body}"
-      $stdout.flush
-
       unless response.is_a?(Net::HTTPSuccess)
         raise "Maillayer delivery failed (#{response.code}): #{response.body}"
       end
     end
-  rescue => e
-    $stdout.puts "[Maillayer] ERROR: #{e.class}: #{e.message}"
-    $stdout.flush
-    raise
   end
 
   private
