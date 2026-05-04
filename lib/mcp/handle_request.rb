@@ -26,7 +26,7 @@ module Mcp
           result: {
             protocolVersion: '2025-11-25',
             serverInfo: {
-              name: 'Haven Sign',
+              name: 'Brown Haven Homes',
               version: Docuseal.version.to_s
             },
             capabilities: {

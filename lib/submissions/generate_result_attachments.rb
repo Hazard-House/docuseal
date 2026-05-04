@@ -37,7 +37,7 @@ module Submissions
       bold_italic: FONT_BOLD_NAME
     }.freeze
 
-    SIGN_REASON = 'Signed with Haven Sign'
+    SIGN_REASON = 'Signed with Brown Haven Homes'
 
     RTL_REGEXP = TextUtils::RTL_REGEXP
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationMailer < ActionMailer::Base
-  default from: 'Haven Sign <noreply@brownhavenhomes.com>'
+  default from: 'Brown Haven Homes <noreply@brownhavenhomes.com>'
   layout 'mailer'
 
   register_interceptor ActionMailerConfigsInterceptor

@@ -4,7 +4,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Haven Sign — BHH Design Tokens (fonts loaded via _head_tags.html.erb) */
+/* Brown Haven Homes — BHH Design Tokens (fonts loaded via _head_tags.html.erb) */
 :root {
   --bhh-sans: "Sweet Sans Pro", "Helvetica Neue", Arial, sans-serif;
   --bhh-serif: "Adobe Caslon", "Adobe Caslon Pro", "Garamond", Georgia, serif;
@@ -28,7 +28,7 @@
   --hs-surface-doc: #ece5d6;
 }
 
-/* Haven Sign — Field markers (PDF signing overlays) */
+/* Brown Haven Homes — Field markers (PDF signing overlays) */
 .hs-field {
   position: absolute;
   border: 1.5px dashed var(--bhh-dandelion);
@@ -45,14 +45,14 @@
 .hs-field.signed { background: #fff; border: 1px solid var(--hs-success); color: var(--hs-success); }
 .hs-field.signed::before { content: "\2713"; background: var(--hs-success); color: #fff; }
 
-/* Haven Sign — Signature fonts (loaded via <link> in form layout) */
+/* Brown Haven Homes — Signature fonts (loaded via <link> in form layout) */
 .hs-sig-font-allura { font-family: 'Allura', cursive; }
 .hs-sig-font-caveat { font-family: 'Caveat', cursive; font-weight: 700; }
 .hs-sig-font-dancing { font-family: 'Dancing Script', cursive; font-weight: 700; }
 .hs-sig-font-homemade { font-family: 'Homemade Apple', cursive; }
 .hs-sig-font-caslon { font-family: var(--bhh-serif); font-style: italic; font-weight: 700; }
 
-/* Haven Sign — Tags */
+/* Brown Haven Homes — Tags */
 .hs-tag {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 4px 10px;
@@ -65,7 +65,7 @@
 .hs-tag.dandy { background: var(--bhh-dandelion); border-color: var(--bhh-dandelion); color: var(--hs-ink); }
 .hs-tag.dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
-/* Haven Sign — Progress strip */
+/* Brown Haven Homes — Progress strip */
 .hs-progress { display: flex; align-items: center; gap: 12px; }
 .hs-progress .bar { flex: 1; height: 4px; background: var(--hs-rule); border-radius: 2px; overflow: hidden; }
 .hs-progress .bar > div { height: 100%; background: var(--bhh-dandelion); }

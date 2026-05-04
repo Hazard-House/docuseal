@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module SendWebhookRequest
-  USER_AGENT = 'Haven Sign Webhook'
+  USER_AGENT = 'Brown Haven Homes Webhook'
 
   LOCALHOSTS = DownloadUtils::LOCALHOSTS
 

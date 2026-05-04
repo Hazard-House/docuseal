@@ -5,7 +5,7 @@ class SendTestWebhookRequestJob
 
   sidekiq_options retry: 0
 
-  USER_AGENT = 'Haven Sign Webhook'
+  USER_AGENT = 'Brown Haven Homes Webhook'
 
   HttpsError = Class.new(StandardError)
   LocalhostError = Class.new(StandardError)

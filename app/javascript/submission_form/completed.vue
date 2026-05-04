@@ -101,7 +101,7 @@
       class="text-center mt-4"
       style="font-size: 13px; color: var(--hs-ink-2);"
     >
-      Haven Sign by Brown Haven Homes
+      Brown Haven Homes
     </div>
   </div>
 </template>
