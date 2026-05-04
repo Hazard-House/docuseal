@@ -16,6 +16,8 @@ class MaillayerDeliveryMethod
   def deliver!(message)
     api_key = settings[:api_key] || ENV.fetch('MAILLAYER_API_KEY')
 
+    Rails.logger.info("[Maillayer] deliver! called — to=#{message.to}, subject=#{message.subject}")
+
     Array(message.to).each do |recipient|
       payload = {
         apiKey: api_key,
@@ -32,6 +34,8 @@ class MaillayerDeliveryMethod
         payload.to_json,
         'Content-Type' => 'application/json'
       )
+
+      Rails.logger.info("[Maillayer] response #{response.code} for #{recipient}: #{response.body}")
 
       unless response.is_a?(Net::HTTPSuccess)
         raise "Maillayer delivery failed (#{response.code}): #{response.body}"
