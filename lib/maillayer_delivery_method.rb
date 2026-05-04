@@ -16,9 +16,12 @@ class MaillayerDeliveryMethod
   def deliver!(message)
     api_key = settings[:api_key] || ENV.fetch('MAILLAYER_API_KEY')
 
+    from = message[:from].to_s.presence || 'Haven Sign <noreply@brownhavenhomes.com>'
+
     Array(message.to).each do |recipient|
       payload = {
         apiKey: api_key,
+        from: from,
         to: recipient,
         subject: message.subject,
         content: html_body(message),
